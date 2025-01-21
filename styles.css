@@ -1,0 +1,128 @@
+/* Basic styling and responsive container */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Responsive text sizes and padding */
+h1, h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+@media (min-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.75em; }
+}
+
+.form label, .form select, .form input, .form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+button {
+    background-color: #84fab0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #8fd3f4;
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -90px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Spinner styling */
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #8fd3f4;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Output section styling */
+.output-section {
+    margin-top: 20px;
+    display: none;
+}
+
+.question-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    .form label, .form select, .form input, .form button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
